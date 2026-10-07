@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <- change this
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: pages
+    label: Site content
+    files:
+      - name: speaking
+        label: Speaking record
+        file: content/speaking.json
+        fields:
+          - label: Engagements
+            name: items
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { label: Year, name: year, widget: string, hint: "Four digits, e.g. 2026. The site sorts newest first." }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string }
+              - { label: Date and place, name: when, widget: string }
+              - { label: Role, name: role, widget: string, hint: "Speaker, Panelist, Facilitator..." }
+              - { label: Flyer, name: flyer, widget: image }
+      - name: events
+        label: Events and classes
+        file: content/events.json
+        fields:
+          - { label: Show a next event, name: show_next_event, widget: boolean, default: true, hint: "Turn off when there is no event." }
+          - { label: Month, name: month, widget: string }
+          - { label: Year, name: year, widget: string }
+          - { label: Event title, name: title, widget: string }
+          - { label: Event text, name: text, widget: text }
+          - { label: Button label, name: button_label, widget: string, default: Register }
+          - { label: Registration link, name: register_link, widget: string, required: false, hint: "Leave empty to show 'No event for now' when someone clicks Register." }
+          - { label: Message when no event (title), name: empty_title, widget: string }
+          - { label: Message when no event (text), name: empty_text, widget: string }
+      - name: settings
+        label: Links, prices and emails
+        file: content/settings.json
+        fields:
+          - { label: Contact email, name: contact_email, widget: string }
+          - { label: PLSC questions email, name: plsc_email, widget: string }
+          - { label: PLSC registration link, name: plsc_link, widget: string }
+          - { label: Direction Call price, name: price_direction, widget: string }
+          - { label: Strategy Session price, name: price_strategy, widget: string }
+          - { label: Booking link (Nestuge), name: booking_link, widget: string }
