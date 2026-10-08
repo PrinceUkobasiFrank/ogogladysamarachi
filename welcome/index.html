@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Welcome | Gladys Ogo</title>
+<meta name="theme-color" content="#270303">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--m:#270303;--b:#F0DED4;--p:#FDF9F6;--bd:#E6C9BC;--ink:#270303;--mute:#6b4a45}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.0625rem/1.65 "Hanken Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--p);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:800;letter-spacing:-.025em;line-height:1.08}
+h1{font-size:clamp(2.6rem,9vw,5.2rem)}h2{font-size:clamp(2rem,6vw,3.2rem)}h3{font-size:1.35rem;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{width:min(100% - 2.5rem,68rem);margin-inline:auto}
+section{padding:clamp(3.5rem,9vw,6.5rem) 0}
+.dark{background:var(--m);color:var(--b)}.blush{background:var(--b)}
+.eyebrow{font-weight:700;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.1rem;opacity:.8}
+.lead{font-size:1.2rem;max-width:38rem;margin-top:1.25rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.7rem 1.6rem;font:600 1rem "Hanken Grotesk",sans-serif;text-decoration:none;border:1.5px solid var(--m);background:var(--m);color:var(--b);cursor:pointer;border-radius:2px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--m)}
+.dark .btn{background:var(--b);color:var(--m);border-color:var(--b)}.dark .btn--ghost{background:transparent;color:var(--b)}
+.row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;padding:2rem 0}
+.hero img.logo{width:11rem}
+.hero h1{margin-top:3rem;max-width:12ch}
+.hero .down{font-weight:600;text-decoration:none;border-bottom:1.5px solid currentColor;align-self:flex-start;margin-top:2.5rem}
+/* browser */
+.browser{margin-top:2.5rem;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(39,3,3,.45);border:1px solid var(--bd)}
+.browser__bar{display:flex;align-items:center;gap:.4rem;padding:.7rem 1rem;background:var(--b)}
+.browser__bar i{width:.65rem;height:.65rem;border-radius:50%;background:var(--bd)}
+.browser__bar span{margin-left:.6rem;font-size:.85rem;background:var(--p);padding:.2rem .9rem;border-radius:99px;flex:1;max-width:20rem}
+.browser__body{display:grid;background:var(--m);color:var(--b)}
+.browser__body div{padding:2rem 1.5rem}.browser__body h3{font-size:clamp(1.5rem,5vw,2.4rem);margin:.6rem 0}
+.browser__body img{width:100%;height:100%;max-height:22rem;object-fit:cover;object-position:50% 15%}
+@media(min-width:48em){.browser__body{grid-template-columns:1.1fr .9fr;align-items:center}.browser__body div{padding:3rem}}
+/* lists */
+.grid{display:grid;gap:1.25rem;margin-top:2.5rem}
+@media(min-width:48em){.grid--3{grid-template-columns:repeat(3,1fr)}.grid--2{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--p);border:1px solid var(--bd);padding:1.5rem;display:flex;flex-direction:column;gap:.8rem}
+.dark .card{background:transparent;border-color:rgba(240,222,212,.25)}
+.card img{width:100%;display:block;border:1px solid var(--bd)}
+.card p{font-size:.98rem;opacity:.85}.card .row{margin-top:auto;padding-top:.5rem}.card .btn{min-height:2.7rem;padding:.5rem 1.1rem;font-size:.92rem}
+.num{font-family:Fraunces,serif;font-weight:800;font-size:2.4rem;opacity:.35;line-height:1}
+.ticks{list-style:none;padding:0;display:grid;gap:.7rem;margin-top:2rem}
+@media(min-width:48em){.ticks{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.ticks li{padding:.7rem 0;border-bottom:1px solid rgba(240,222,212,.25);display:flex;gap:.8rem}.ticks li:before{content:"✓";font-weight:700}
+dl{margin-top:2rem;border-top:1px solid var(--m)}dl div{display:grid;gap:.1rem;padding:1rem 0;border-bottom:1px solid var(--bd)}
+@media(min-width:48em){dl div{grid-template-columns:14rem 1fr}}dt{font-weight:700}dd a{word-break:break-all}
+footer{padding:2.5rem 0;font-size:.92rem}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translate(-50%,200%);background:var(--m);color:var(--b);padding:.8rem 1.4rem;border-radius:2px;transition:transform .3s;z-index:9}.toast.on{transform:translate(-50%,0)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style></head><body>
+
+<header class="hero dark"><div class="wrap" style="display:flex;flex-direction:column;justify-content:space-between;min-height:calc(100svh - 4rem)">
+  <img class="logo" src="../images/logo-light.png" alt="The Keen-Eyed Proofreader" width="720" height="278">
+  <div>
+    <p class="eyebrow">Gladys Ogo</p>
+    <h1>Your digital presence is ready.</h1>
+    <p class="lead">Your website, your dashboard and everything you need to share it have been prepared and packaged for you.</p>
+    <a class="down" href="#website" style="display:inline-block;margin-top:2.5rem;font-weight:600;border-bottom:1.5px solid currentColor;text-decoration:none">See what's inside ↓</a>
+  </div>
+</div></header>
+
+<section id="website"><div class="wrap">
+  <p class="eyebrow">01 · Your website</p>
+  <h2>Your digital home is live.</h2>
+  <p class="lead">Everything is connected and ready to share. This is the link to send, post and print.</p>
+  <div class="browser" aria-hidden="true">
+    <div class="browser__bar"><i></i><i></i><i></i><span>ogogladysamarachi.com</span></div>
+    <div class="browser__body"><div><p class="eyebrow">The Keen-Eyed Proofreader</p><h3>I work across legal proofreading, digital visibility and career development.</h3></div><img src="../images/go2-720.jpeg" alt=""></div>
+  </div>
+  <div class="row"><a class="btn" href="https://ogogladysamarachi.com" target="_blank" rel="noopener">Visit website</a><button class="btn btn--ghost" data-copy="https://ogogladysamarachi.com">Copy website link</button></div>
+</div></section>
+
+<section class="blush" id="control"><div class="wrap">
+  <p class="eyebrow">02 · Your website, your control</p>
+  <h2>Update it yourself, any time.</h2>
+  <p class="lead">Your website has a private dashboard. For everyday changes you don't need a developer: log in, edit, publish.</p>
+  <div class="grid grid--3">
+    <div class="card"><h3>Speaking</h3><p>Add a new engagement with its flyer. Newest years appear first automatically.</p></div>
+    <div class="card"><h3>Events</h3><p>Set the next event, add its registration link, or switch it off when there is none.</p></div>
+    <div class="card"><h3>Links and prices</h3><p>Change your emails, consultation prices, booking link and PLSC registration link.</p></div>
+  </div>
+  <div class="row"><a class="btn" href="/admin" target="_blank" rel="noopener">Open your dashboard</a><a class="btn btn--ghost" href="assets/cms-guide.pdf" download>Download the guide (PDF)</a></div>
+</div></section>
+
+<section id="share"><div class="wrap">
+  <p class="eyebrow">03 · Your share kit</p>
+  <h2>Made to be shared.</h2>
+  <p class="lead">Your presence shouldn't live only on your website. Use these on WhatsApp, Instagram, LinkedIn and in print.</p>
+  <div class="grid grid--2">
+    <div class="card"><img src="assets/qr-website.png" alt="QR code for ogogladysamarachi.com" loading="lazy"><h3>Website QR code</h3><p>Scans straight to your website. Your monogram sits in the centre. Use the SVG for print and large sizes.</p><div class="row"><a class="btn" href="assets/qr-website.png" download>PNG</a><a class="btn btn--ghost" href="assets/qr-website.svg" download>SVG</a></div></div>
+    <div class="card"><img src="assets/qr-contact.png" alt="QR code that saves Gladys Ogo's contact details" loading="lazy"><h3>Contact card QR</h3><p>Scan it and your name, email and website are offered to save as a phone contact.</p><div class="row"><a class="btn" href="assets/qr-contact.png" download>PNG</a></div></div>
+    <div class="card"><img src="assets/status-live.png" alt="My website is live, status design" loading="lazy" style="max-height:34rem;object-fit:cover;object-position:top"><h3>WhatsApp status</h3><p>1080 × 1920. Post it to announce the website.</p><div class="row"><a class="btn" href="assets/status-live.png" download>Download</a></div></div>
+    <div class="card"><img src="assets/post-live.png" alt="Now online, square post" loading="lazy"><h3>Square post</h3><p>1080 × 1080 for Instagram, LinkedIn and X.</p><div class="row"><a class="btn" href="assets/post-live.png" download>Download</a></div></div>
+  </div>
+</div></section>
+
+<section class="dark" id="howto"><div class="wrap">
+  <p class="eyebrow">04 · How to share</p>
+  <h2>Take it everywhere.</h2>
+  <div class="grid grid--3">
+    <div class="card"><span class="num">01</span><p>Copy your website link.</p></div>
+    <div class="card"><span class="num">02</span><p>Put it in your WhatsApp profile, Instagram bio, LinkedIn and email signature.</p></div>
+    <div class="card"><span class="num">03</span><p>Use the QR code whenever you want people to find your work offline: flyers, banners, slides.</p></div>
+  </div>
+  <div class="row"><button class="btn" data-copy="https://ogogladysamarachi.com">Copy link</button><a class="btn btn--ghost" href="assets/qr-website.png" download>Download QR</a><a class="btn btn--ghost" target="_blank" rel="noopener" href="https://wa.me/?text=Visit%20my%20new%20website%3A%20https%3A%2F%2Fogogladysamarachi.com">Share on WhatsApp</a></div>
+</div></section>
+
+<section id="inside"><div class="wrap">
+  <p class="eyebrow">05 · What's inside</p>
+  <h2>Your digital package.</h2>
+  <ul class="ticks" style="color:var(--m)">
+    <li>Personal website</li><li>Custom domain</li><li>Content dashboard</li><li>Mobile-ready design</li>
+    <li>Working contact form</li><li>Website QR code</li><li>Contact card QR code</li><li>Status and post designs</li>
+    <li>Share preview image</li><li>Dashboard guide</li>
+  </ul>
+  <dl>
+    <div><dt>Website</dt><dd><a href="https://ogogladysamarachi.com">ogogladysamarachi.com</a></dd></div>
+    <div><dt>Dashboard</dt><dd><a href="/admin">ogogladysamarachi.com/admin</a> (private login)</dd></div>
+    <div><dt>Blog</dt><dd><a href="https://marooninkcontents.blogspot.com">marooninkcontents.blogspot.com</a></dd></div>
+  </dl>
+</div></section>
+
+<section class="blush"><div class="wrap">
+  <p class="eyebrow">Built to grow with you</p>
+  <h2>This is only the start.</h2>
+  <p class="lead">Your website is how people find, understand and reach your work. As your work grows, it grows with you. If you need anything, I'm one message away.</p>
+</div></section>
+
+<footer class="dark"><div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem"><span>Technology by PR3NC2 Technologies</span><span>Prepared for Gladys Ogo</span></div></footer>
+<div class="toast" id="toast" role="status">Link copied</div>
+<script>
+document.querySelectorAll("[data-copy]").forEach(function(b){b.addEventListener("click",function(){
+  var t=b.getAttribute("data-copy"),done=function(){var x=document.getElementById("toast");x.classList.add("on");setTimeout(function(){x.classList.remove("on")},1800)};
+  if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,done);else{var i=document.createElement("input");i.value=t;document.body.appendChild(i);i.select();document.execCommand("copy");i.remove();done()}
+})});
+</script>
+</body></html>
