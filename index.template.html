@@ -6,9 +6,29 @@
 <title>Gladys Ogo | The Keen-Eyed Proofreader</title>
 <meta name="description" content="Gladys Ogo is a law graduate, legal researcher, legal proofreader and law brand influencer, and the founder of the Premium Law Students Community (PLSC).">
 <meta name="theme-color" content="#270303">
-<link rel="manifest" href="site.webmanifest">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="canonical" href="https://ogogladysamarachi.com/">
+
+<!-- Icons -->
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="/images/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Share previews -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gladys Ogo | The Keen-Eyed Proofreader">
+<meta property="og:title" content="Gladys Ogo | The Keen-Eyed Proofreader">
+<meta property="og:description" content="Legal proofreader and researcher. Guide to law students building visibility. Founder of the Premium Law Students Community.">
+<meta property="og:url" content="https://ogogladysamarachi.com/">
+<meta property="og:image" content="https://ogogladysamarachi.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ogogladysamarachi.com/images/og-image.jpg">
+
+<!-- Hero image preload -->
 <link rel="preload" as="image" href="images/go2.jpeg" imagesrcset="images/go2-720.jpeg 900w, images/go2.jpeg 2080w" imagesizes="100vw" fetchpriority="high">
+
 <!-- Decides, before first paint, whether to run the heavy effects. Slow, data-saving or low-memory devices get "lite". -->
 <script>
 (function(){
@@ -22,17 +42,8 @@
   d.classList.add("js"); d.setAttribute("data-perf", lite ? "lite" : "full"); window.__perfLite=lite;
 })();
 </script>
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ogogladysamarachi.com/">
-<meta property="og:image" content="https://ogogladysamarachi.com/images/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ogogladysamarachi.com/images/og-image.jpg">
-<meta property="og:title" content="Gladys Ogo | The Keen-Eyed Proofreader">
-<meta property="og:description" content="Legal proofreader and researcher. Guide to law students building visibility. Founder of the Premium Law Students Community.">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,700;9..144,800;9..144,900&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
@@ -52,38 +63,11 @@
 }
 </script>
 
-<!--
-  DEV NOTES (delete before launch)
-  Anything marked data-todo is placeholder content and is outlined in gold while the
-  "DEV: placeholder highlight" CSS block is present. Replace each one, then delete that block.
-    - Nestuge link for the two consultation bookings is live. Still needed: event registration link.
-    - WhatsApp link for PLSC registration
-    - Consultation prices are now real (from her website-info doc). Booking links still need the Nestuge URL.
-    - Testimonials: 8 real ones are in. Photos: images/tst1.jpeg to tst8.jpeg. Mapping: tst1 Inyeneabasi, tst2 Bukola, tst3 Williams, tst4 Ediomo,
-      tst5 Etienoabasi, tst6 Oluchi, tst7 Amarachi, tst8 Greatness. Square crops work best; faces are top-weighted.
-      Confirm each person agrees to their name and photo being published (SOW section 9).
-    - Articles: 3 real Maroon Ink posts are in. No images are reused (the Igbo folklore post says the photos aren't hers). Add owned cover images via the CMS.
-    - Speaking record: flyers in images/speaking/ (payment details and third-party contacts were cropped out). Add the date for the LJL Bootcamp row.
-    - Awards: 11 items from her website-info doc are in About, newest first. "Where I'm Going" and "Brand Direction" (Revenue/Influence/Impact) are still not placed anywhere -- ask her if/where she wants them.
-    - PLSC launch flyer: images/speaking/plsc-launch.webp, clickable from the PLSC section.
-    - Photos: images/go1.jpeg to go4.jpeg (go1 hero, go2 and go3 hero slides, go4 Speaking). Portrait 3:4 works best.
-      If her files are .jpeg/.webp, find-and-replace ".jpeg". Alt texts already describe each photo.
-    - Logo: images/logo.png (burgundy ink, nav) and images/logo-light.png (blush, footer). Brand logos in images/brands/ are transparent blush versions
-      of the supplied files (originals kept in images/brands/original/). LexPerientia's source is small and cropped at the top: ask for a better file.
-      Get each brand's OK to use its logo.
-    - Final bio
-    - Social sharing: add <meta property="og:image" content="https://YOURDOMAIN/images/go1.jpeg"> once the domain is live (must be an absolute URL).
-    - Email address (currently the Gmail from the questionnaire; swap for the domain email)
-    - Contact form: uses Netlify Forms (works after deploying on Netlify; view messages in Netlify > Forms).
-    - TikTok: add a row in Contact and the footer once the account exists.
--->
-
 <style>
 /* =====================================================================
    MOBILE-FIRST. Base rules are the phone layout.
    min-width queries add: 40em (large phone), 48em (tablet), 64em (laptop), 74em (full nav).
    ===================================================================== */
-
 /* ============ TOKENS ============ */
 :root{
   /* Client swatches, sampled from the images supplied */
