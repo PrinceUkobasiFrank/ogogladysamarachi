@@ -1,0 +1,249 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <- change this
+  branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: pages
+    label: Site content
+    files:
+      - name: speaking
+        label: Speaking record
+        file: content/speaking.json
+        fields:
+          - label: Engagements
+            name: items
+            widget: list
+            summary: "{{fields.year}} · {{fields.title}}"
+            fields:
+              - { label: Year, name: year, widget: string, hint: "Four digits, e.g. 2026. The site sorts newest first." }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: string }
+              - { label: Date and place, name: when, widget: string }
+              - { label: Role, name: role, widget: string, hint: "Speaker, Panelist, Facilitator..." }
+              - { label: Flyer, name: flyer, widget: image }
+      - name: events
+        label: Events and classes
+        file: content/events.json
+        fields:
+          - { label: Show a next event, name: show_next_event, widget: boolean, default: true, hint: "Turn off when there is no event." }
+          - { label: Month, name: month, widget: string }
+          - { label: Year, name: year, widget: string }
+          - { label: Event title, name: title, widget: string }
+          - { label: Event text, name: text, widget: text }
+          - { label: Button label, name: button_label, widget: string, default: Register }
+          - { label: Registration link, name: register_link, widget: string, required: false, hint: "Leave empty to show 'No event for now' when someone clicks Register." }
+          - { label: Message when no event (title), name: empty_title, widget: string }
+          - { label: Message when no event (text), name: empty_text, widget: string }
+      - name: settings
+        label: Links, prices and emails
+        file: content/settings.json
+        fields:
+          - { label: Contact email, name: contact_email, widget: string }
+          - { label: PLSC questions email, name: plsc_email, widget: string }
+          - { label: PLSC registration link, name: plsc_link, widget: string }
+          - { label: Direction Call price, name: price_direction, widget: string }
+          - { label: Strategy Session price, name: price_strategy, widget: string }
+          - { label: Booking link (Nestuge), name: booking_link, widget: string }
+          - { label: LinkedIn link, name: linkedin_url, widget: string }
+          - { label: Instagram link, name: instagram_url, widget: string }
+          - { label: X (Twitter) link, name: x_url, widget: string }
+          - { label: Blog link, name: blog_url, widget: string }
+          - { label: TikTok link, name: tiktok_url, widget: string, required: false, hint: "Paste your TikTok profile link. Leave empty to hide the icon." }
+          - { label: "Google title (browser tab and search)", name: seo_title, widget: string }
+          - { label: "Google description (search result text)", name: seo_description, widget: text }
+          - { label: "Link preview description (WhatsApp, LinkedIn)", name: social_description, widget: text }
+
+  - name: text
+    label: Page words (edit any text)
+    files:
+      - name: page
+        label: "Sticky bar and misc"
+        file: content/text/page.json
+        fields:
+          - { name: t_page_1, label: "Link text: Skip to content", widget: string, required: false }
+          - { name: t_page_2, label: "Button: Share this site", widget: string, required: false }
+          - { name: t_page_3, label: "Button: \u00d7", widget: string, required: false }
+          - { name: t_page_4, label: "Link text: Book a call", widget: string, required: false }
+      - name: nav
+        label: "Nav"
+        file: content/text/nav.json
+        fields:
+          - { name: t_nav_1, label: "Text: Gladys Ogo", widget: string, required: false }
+          - { name: t_nav_2, label: "Text: The Keen-Eyed Proofreader", widget: string, required: false }
+          - { name: t_nav_3, label: "Link text: About", widget: string, required: false }
+          - { name: t_nav_4, label: "Link text: Services", widget: string, required: false }
+          - { name: t_nav_5, label: "Link text: Speaking", widget: string, required: false }
+          - { name: t_nav_6, label: "Link text: PLSC", widget: string, required: false }
+          - { name: t_nav_7, label: "Link text: Events", widget: string, required: false }
+          - { name: t_nav_8, label: "Link text: Consultation", widget: string, required: false }
+          - { name: t_nav_9, label: "Link text: Contact", widget: string, required: false }
+          - { name: t_nav_10, label: "Subheading: Explore", widget: string, required: false }
+      - name: top
+        label: "Hero (top of page)"
+        file: content/text/top.json
+        fields:
+          - { name: t_top_1, label: "Paragraph: I work across legal proofreading, digital visibi", widget: string, required: false }
+          - { name: t_top_2, label: "Link text: Book a consultation", widget: string, required: false }
+          - { name: t_top_3, label: "Link text: See services", widget: string, required: false }
+      - name: about
+        label: "About"
+        file: content/text/about.json
+        fields:
+          - { name: t_about_1, label: "Paragraph: I'm Gladys Ogo, known as The Keen-Eyed Proofread", widget: text, required: false }
+          - { name: t_about_2, label: "Paragraph: Through my content, speaking, consultations, bra", widget: text, required: false }
+          - { name: t_about_3, label: "Text: Find me on", widget: string, required: false }
+      - name: services
+        label: "Services"
+        file: content/text/services.json
+        fields:
+          - { name: t_services_1, label: "Subheading: Legal Proofreading & Research", widget: string, required: false }
+          - { name: t_services_2, label: "Paragraph: Who It Is For: Lawyers, Legal Writers, Researche", widget: string, required: false }
+          - { name: t_services_3, label: "Paragraph: I help turn legal and academic drafts into polis", widget: text, required: false }
+          - { name: t_services_4, label: "List item: Legal proofreading", widget: string, required: false }
+          - { name: t_services_5, label: "List item: Legal research support", widget: string, required: false }
+          - { name: t_services_6, label: "Link text: Enquire about proofreading", widget: string, required: false }
+          - { name: t_services_7, label: "Subheading: Partnership & Collaborations", widget: string, required: false }
+          - { name: t_services_8, label: "Paragraph: Who It Is For: Law-Focused Brands and Organisati", widget: string, required: false }
+          - { name: t_services_9, label: "Paragraph: I work with law-focused brands and organisations", widget: text, required: false }
+          - { name: t_services_10, label: "List item: Standard posts, campaigns and opportunity promot", widget: string, required: false }
+          - { name: t_services_11, label: "List item: Broader content collaborations", widget: string, required: false }
+          - { name: t_services_12, label: "Link text: Discuss a partnership", widget: string, required: false }
+      - name: proof
+        label: "Brands and testimonials"
+        file: content/text/proof.json
+        fields:
+          - { name: t_proof_1, label: "Heading: Brands I've worked with", widget: string, required: false }
+          - { name: t_proof_2, label: "Text: Pause", widget: string, required: false }
+          - { name: t_proof_3, label: "Text: CaseRadar", widget: string, required: false }
+          - { name: t_proof_4, label: "Text: CareerEx", widget: string, required: false }
+          - { name: t_proof_5, label: "Text: Africa Everywhere", widget: string, required: false }
+          - { name: t_proof_6, label: "Text: LexPerientia", widget: string, required: false }
+          - { name: t_proof_7, label: "Text: NAOS Simulations", widget: string, required: false }
+          - { name: t_proof_8, label: "Text: clients on legal & academic proofreading", widget: string, required: false }
+          - { name: t_proof_9, label: "Text: law students & young professionals reached acros", widget: string, required: false }
+          - { name: t_proof_10, label: "Text: consultations delivered", widget: string, required: false }
+          - { name: t_proof_11, label: "Text: speaking & training engagements", widget: string, required: false }
+          - { name: t_proof_12, label: "Text: law students trained", widget: string, required: false }
+          - { name: t_proof_13, label: "Subheading: In their words", widget: string, required: false }
+          - { name: t_proof_14, label: "Paragraph: Ogo is an excellent Proofreader who knows how to", widget: text, required: false }
+          - { name: t_proof_15, label: "Text: OA", widget: string, required: false }
+          - { name: t_proof_16, label: "Name: Oluchi Ajogwu, Esq.", widget: string, required: false }
+          - { name: t_proof_17, label: "Text: Proofreading masterclass participant", widget: string, required: false }
+          - { name: t_proof_18, label: "Paragraph: Miss Ogo is an excellent proofreader and an even", widget: text, required: false }
+          - { name: t_proof_19, label: "Text: E", widget: string, required: false }
+          - { name: t_proof_20, label: "Name: Etienoabasi", widget: string, required: false }
+          - { name: t_proof_21, label: "Text: Three-day proofreading course participant", widget: string, required: false }
+          - { name: t_proof_22, label: "Paragraph: I was looking for someone who will proofread my ", widget: text, required: false }
+          - { name: t_proof_23, label: "Text: GE", widget: string, required: false }
+          - { name: t_proof_24, label: "Name: Greatness Eyonsa", widget: string, required: false }
+          - { name: t_proof_25, label: "Text: Author, The Principles of Becoming a Good Advoca", widget: string, required: false }
+          - { name: t_proof_26, label: "Paragraph: I\u2019m delighted to recommend Gladys as an exceptio", widget: text, required: false }
+          - { name: t_proof_27, label: "Text: BA", widget: string, required: false }
+          - { name: t_proof_28, label: "Name: Bukola Aroyehun", widget: string, required: false }
+          - { name: t_proof_29, label: "Paragraph: Her name is Ogo Gladys Amarachi. She is the best", widget: text, required: false }
+          - { name: t_proof_30, label: "Paragraph: Did I regret? Naah, I didn\u2019t. I got more than my", widget: text, required: false }
+          - { name: t_proof_31, label: "Text: EE", widget: string, required: false }
+          - { name: t_proof_32, label: "Name: Ediomo Eduok", widget: string, required: false }
+          - { name: t_proof_33, label: "Text: Masterclass of Proofreading (2.0) participant", widget: string, required: false }
+          - { name: t_proof_34, label: "Paragraph: Ogo Gladys Amarachi is an exceptional Proofreade", widget: text, required: false }
+          - { name: t_proof_35, label: "Paragraph: After I started applying what I was taught, I go", widget: text, required: false }
+          - { name: t_proof_36, label: "Text: AO", widget: string, required: false }
+          - { name: t_proof_37, label: "Name: Amarachi Okoroafor, Esq.", widget: string, required: false }
+          - { name: t_proof_38, label: "Text: Proofreading class participant", widget: string, required: false }
+          - { name: t_proof_39, label: "Paragraph: I needed a proofreader and a blog writer. Ogo ap", widget: text, required: false }
+          - { name: t_proof_40, label: "Text: IE", widget: string, required: false }
+          - { name: t_proof_41, label: "Name: Inyeneabasi E.", widget: string, required: false }
+          - { name: t_proof_42, label: "Text: Client, proofreading and blog writing", widget: string, required: false }
+          - { name: t_proof_43, label: "Paragraph: I highly recommend Gladys for her outstanding pr", widget: text, required: false }
+          - { name: t_proof_44, label: "Text: WT", widget: string, required: false }
+          - { name: t_proof_45, label: "Name: Williams Tomide", widget: string, required: false }
+      - name: speaking
+        label: "Speaking"
+        file: content/text/speaking.json
+        fields:
+          - { name: t_speaking_1, label: "Paragraph: I speak to law students, graduates and legal pro", widget: text, required: false }
+          - { name: t_speaking_2, label: "Link text: Invite me to speak", widget: string, required: false }
+          - { name: t_speaking_3, label: "List item: Building a professional presence early as a law ", widget: string, required: false }
+          - { name: t_speaking_4, label: "List item: Digital visibility in the legal profession", widget: string, required: false }
+          - { name: t_speaking_5, label: "List item: How law students can show up professionally onli", widget: string, required: false }
+          - { name: t_speaking_6, label: "List item: Academic excellence and professional development", widget: string, required: false }
+          - { name: t_speaking_7, label: "List item: Building a career in a changing legal profession", widget: string, required: false }
+          - { name: t_speaking_8, label: "List item: Personal branding for people in the legal space", widget: string, required: false }
+          - { name: t_speaking_9, label: "List item: Becoming visible without losing professional cre", widget: string, required: false }
+          - { name: t_speaking_10, label: "Paragraph: Available for: webinars, physical sessions, prof", widget: string, required: false }
+          - { name: t_speaking_11, label: "Subheading: Where I've spoken", widget: string, required: false }
+          - { name: t_speaking_12, label: "Paragraph: Seven engagements since September 2024. Tap one ", widget: string, required: false }
+          - { name: t_speaking_13, label: "Text: Panelist", widget: string, required: false }
+          - { name: t_speaking_14, label: "Bold text: iCreate Conference, Campus Edition", widget: string, required: false }
+          - { name: t_speaking_15, label: "Text: Annex Uyo, May 2025", widget: string, required: false }
+      - name: plsc
+        label: "PLSC community"
+        file: content/text/plsc.json
+        fields:
+          - { name: t_plsc_1, label: "Heading: Premium Law Students Community", widget: string, required: false }
+          - { name: t_plsc_2, label: "Paragraph: Building law students who stand out among others", widget: string, required: false }
+          - { name: t_plsc_3, label: "Paragraph: Studying law can make you feel like you have to ", widget: text, required: false }
+          - { name: t_plsc_4, label: "Subheading: Who it's for", widget: string, required: false }
+          - { name: t_plsc_5, label: "Paragraph: Law students who are intentional about academic ", widget: text, required: false }
+          - { name: t_plsc_6, label: "Subheading: How it works", widget: string, required: false }
+          - { name: t_plsc_7, label: "Paragraph: Through training, mentorship, accountability, ch", widget: text, required: false }
+          - { name: t_plsc_8, label: "Link text: Register for PLSC", widget: string, required: false }
+          - { name: t_plsc_9, label: "Text: View flyer", widget: string, required: false }
+          - { name: t_plsc_10, label: "Subheading: Membership benefits", widget: string, required: false }
+          - { name: t_plsc_11, label: "List item: Knowledge and skill development", widget: string, required: false }
+          - { name: t_plsc_12, label: "List item: Networking and meaningful connections", widget: string, required: false }
+          - { name: t_plsc_13, label: "List item: Professional exposure and opportunities", widget: string, required: false }
+          - { name: t_plsc_14, label: "List item: Digital and personal branding", widget: string, required: false }
+          - { name: t_plsc_15, label: "List item: Leadership and growth opportunities", widget: string, required: false }
+      - name: events
+        label: "Events"
+        file: content/text/events.json
+        fields:
+          - { name: t_events_1, label: "Heading: Events and classes", widget: string, required: false }
+          - { name: t_events_2, label: "Subheading: Past events", widget: string, required: false }
+          - { name: t_events_3, label: "Paragraph: Events move here once they've run.", widget: string, required: false }
+      - name: consultation
+        label: "Rework Session"
+        file: content/text/consultation.json
+        fields:
+          - { name: t_consultation_1, label: "Heading: The Rework Session", widget: string, required: false }
+          - { name: t_consultation_2, label: "Paragraph: A focused one-on-one consultation for law studen", widget: text, required: false }
+          - { name: t_consultation_3, label: "Paragraph: Get clarity \u00b7 Find your gaps \u00b7 Leave with a plan", widget: string, required: false }
+          - { name: t_consultation_4, label: "Subheading: The Direction Call", widget: string, required: false }
+          - { name: t_consultation_5, label: "Text: \u2014 1 hour", widget: string, required: false }
+          - { name: t_consultation_6, label: "List item: Assessment of where you stand digitally and acad", widget: string, required: false }
+          - { name: t_consultation_7, label: "List item: Your top 1\u20132 gaps identified", widget: string, required: false }
+          - { name: t_consultation_8, label: "List item: A clear action plan", widget: string, required: false }
+          - { name: t_consultation_9, label: "List item: Written summary after the call", widget: string, required: false }
+          - { name: t_consultation_10, label: "Link text: Book a Direction Call", widget: string, required: false }
+          - { name: t_consultation_11, label: "Subheading: The Strategy Session", widget: string, required: false }
+          - { name: t_consultation_12, label: "Text: \u2014 2 hours", widget: string, required: false }
+          - { name: t_consultation_13, label: "List item: Everything in the Direction Call", widget: string, required: false }
+          - { name: t_consultation_14, label: "List item: Full profile/content audit with rewrite suggesti", widget: string, required: false }
+          - { name: t_consultation_15, label: "List item: A written 30-day action plan based on your stage", widget: string, required: false }
+          - { name: t_consultation_16, label: "List item: One week of follow-up access \u2014 2\u20133 questions by ", widget: string, required: false }
+          - { name: t_consultation_17, label: "Link text: Book a Strategy Session", widget: string, required: false }
+      - name: contact
+        label: "Contact"
+        file: content/text/contact.json
+        fields:
+          - { name: t_contact_1, label: "Heading: Work with me", widget: string, required: false }
+          - { name: t_contact_2, label: "Paragraph: Partnerships, proofreading and research work, sp", widget: text, required: false }
+          - { name: t_contact_3, label: "Form label: Your name", widget: string, required: false }
+          - { name: t_contact_4, label: "Form label: Email address", widget: string, required: false }
+          - { name: t_contact_5, label: "Form label: What is this about?", widget: string, required: false }
+          - { name: t_contact_6, label: "Form label: Message", widget: string, required: false }
+          - { name: t_contact_7, label: "Button: Send message", widget: string, required: false }
+          - { name: t_contact_8, label: "Subheading: Email", widget: string, required: false }
+      - name: footer
+        label: "Footer"
+        file: content/text/footer.json
+        fields:
+          - { name: t_footer_1, label: "Subheading: Connect", widget: string, required: false }
+          - { name: t_footer_2, label: "Paragraph: \u00a9 2026 Gladys Ogo. All rights reserved.", widget: string, required: false }
