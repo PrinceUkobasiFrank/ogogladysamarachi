@@ -38,7 +38,7 @@ const eventBlock=ev.show_next_event?`<article class="event">
       </div>
     </article>`:`<article class="event"><div class="event__body"><h3>${esc(ev.empty_title)}</h3><p>${esc(ev.empty_text)}</p></div></article>`;
 
-const T={}; for(const f of fs.readdirSync('content/text')) Object.assign(T,JSON.parse(fs.readFileSync(path.join('content/text',f),'utf8')));
+const T={}; for(const f of fs.readdirSync('content/text').filter(f=>f.endsWith('.json'))) Object.assign(T,JSON.parse(fs.readFileSync(path.join('content/text',f),'utf8')));
 // Page words: allow plain text plus <strong>, <em>, <br>; escape everything else
 const safe=t=>String(t??'').replace(/&(?!#?\w+;)/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/&lt;(\/?(?:strong|em|b|i)|br\s*\/?)&gt;/g,'<$1>');
 const tiktok=settings.tiktok_url?`<a class="social-icon" href="${esc(settings.tiktok_url)}" rel="noopener" aria-label="TikTok"><svg aria-hidden="true"><use href="#i-tiktok"/></svg></a>`:'';
@@ -50,7 +50,7 @@ let html=fs.readFileSync('index.template.html','utf8')
 const left=html.match(/\{\{\w+\}\}/g); if(left) throw new Error('Unfilled: '+left);
 
 fs.rmSync('dist',{recursive:true,force:true}); fs.mkdirSync('dist');
-const skip=new Set(['dist','node_modules','.git','build.js','index.template.html','content','netlify.toml','README.md','package.json']);
+const skip=new Set(['dist','node_modules','.git','build.js','index.template.html','content','netlify.toml','README.md','package.json','.netlify']);
 for(const f of fs.readdirSync('.')) if(!skip.has(f)) fs.cpSync(f,path.join('dist',f),{recursive:true});
 fs.writeFileSync('dist/index.html',html);
 console.log(`Built: ${items.length} speaking items`);
