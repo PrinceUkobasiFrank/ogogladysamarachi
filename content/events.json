@@ -1,11 +1,11 @@
 {
-  "show_next_event": true,
-  "month": "November",
-  "year": "2026",
-  "title": "Building on LinkedIn as a Law Graduate",
-  "text": "An event for new law graduates. Registration opens in early October.",
-  "button_label": "Register",
-  "register_link": "",
+  "month": "November, 30",
   "empty_title": "No event for now",
+  "button_label": "Register Now!",
+  "text": "An event for new law graduates. Registration opens in early October.",
+  "show_next_event": true,
+  "register_link": "https://nestuge.com/esusx4i34",
+  "title": "How to Build Publicly For 'People in Law' Without Becoming A Content Creator",
+  "year": "2026",
   "empty_text": "Check back soon."
 }
